@@ -34,7 +34,7 @@ int is_alphanum(char c);
 char* to_alphas(uint64_t num, int* alpha_size, char* alpha);
 
 //Prints the number and then clears from memory.
-int print_to_alpha(uint64_t num);
+int print_to_alpha(uint64_t num, char* alpha);
 
 
 #endif
