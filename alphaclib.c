@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #define ALPHA_BASE 36
 
@@ -17,7 +18,7 @@ uint64_t integer_pow(int base, int exp) {
 	return res;
 }
 
-char* to_alpha(uint64_t num) {
+char* to_alpha(uint64_t num, char* alpha) {
 
 	int i = 0, j, ans;
 
@@ -30,8 +31,6 @@ char* to_alpha(uint64_t num) {
 	}
 
 	if (num == 0)i++;
-
-	char* alpha = (char*)calloc(i + 1, sizeof(char));
 
 	i--;
 
@@ -92,7 +91,7 @@ int is_alphanum(char c) {
 	}
 }
 
-char* to_alphas(uint64_t num, int* alpha_size) {
+char* to_alphas(uint64_t num, int* alpha_size, char* alpha) {
 
 	int i, j, ans;
 	
@@ -105,8 +104,6 @@ char* to_alphas(uint64_t num, int* alpha_size) {
 	}
 	
 	if (num == 0)i++;
-
-	char* alpha = (char*)calloc(i + 1, sizeof(char));
 
 	i--;
 
