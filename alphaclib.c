@@ -1,5 +1,4 @@
 #include <stdint.h>
-#include <stdlib.h>
 #include <stdio.h>
 
 #define ALPHA_BASE 36
@@ -124,15 +123,11 @@ char* to_alphas(uint64_t num, int* alpha_size, char* alpha) {
 	return alpha;
 }
 
-int print_to_alpha(uint64_t num) {
+int print_to_alpha(uint64_t num, char* alpha) {
 
 	int i;
 
-	char* alpha = to_alpha(num);
-
-	i = printf("%s", alpha);
-
-	free(alpha);
+	i = printf("%s", to_alpha(num, alpha));
 
 	return i;
 }
