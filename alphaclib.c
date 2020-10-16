@@ -95,8 +95,15 @@ int is_alphanum(char c) {
 char* to_alphas(uint64_t num, int* alpha_size) {
 
 	int i, j, ans;
+	
+	uint64_t val[2] = {0, num - integer_pow(36, i)};
 
-	for (i = 0; (num - integer_pow(36, i)) >= 0; i++);
+	while (val[1] > val[0]) {
+		val[1] = num - integer_pow(36, i);
+		i++;
+		val[0] = num - integer_pow(36, i);
+	}
+	
 	if (num == 0)i++;
 
 	char* alpha = (char*)calloc(i + 1, sizeof(char));
